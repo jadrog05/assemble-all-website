@@ -1,36 +1,45 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Assemble All FNQ Website
 
-## Getting Started
+Marketing website for Assemble All FNQ, a local flatpack assembly business in Cairns and surrounding FNQ areas.
 
-First, run the development server:
+## Stack
+
+- [Next.js App Router](https://nextjs.org/docs/app)
+- [TypeScript](https://www.typescriptlang.org/docs/)
+- [Tailwind CSS](https://tailwindcss.com/docs/installation/framework-guides/nextjs)
+- [shadcn/ui](https://ui.shadcn.com/docs)
+- [Cloudflare Workers deployment via OpenNext](https://opennext.js.org/cloudflare)
+
+## Local Development
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Deploy to Cloudflare Workers
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. Authenticate with Cloudflare:
 
-## Learn More
+```bash
+npx wrangler login
+```
 
-To learn more about Next.js, take a look at the following resources:
+2. Build and preview locally in Workers runtime:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+npm run preview:worker
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+3. Deploy:
 
-## Deploy on Vercel
+```bash
+npm run deploy:worker
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Notes
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Worker name and runtime config are set in `wrangler.toml`.
+- Site logo is stored at `public/assemble-all-fnq-logo.png`.
