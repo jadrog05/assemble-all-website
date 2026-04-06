@@ -11,6 +11,22 @@ binding = "ASSETS"
 binding = "WORKER_SELF_REFERENCE"
 service = "assemble-all-website"
 
+[[r2_buckets]]
+binding = "QUOTE_PHOTOS"
+bucket_name = "assemble-quote-photos"
+
+# Staging Worker + R2 (use: `wrangler deploy -e staging` or npm run deploy:worker:staging)
+[env.staging]
+name = "assemble-all-website-staging"
+
+[[env.staging.services]]
+binding = "WORKER_SELF_REFERENCE"
+service = "assemble-all-website-staging"
+
+[[env.staging.r2_buckets]]
+binding = "QUOTE_PHOTOS"
+bucket_name = "assemble-quote-photos-staging"
+
 [observability]
 enabled = true
 head_sampling_rate = 1

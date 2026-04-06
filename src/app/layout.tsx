@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Geist_Mono, Inter } from "next/font/google";
+
+import { SiteHeader } from "@/components/site-header";
 import "./globals.css";
 
 const inter = Inter({
@@ -28,7 +30,10 @@ export default function RootLayout({
       lang="en"
       className={`${inter.variable} ${geistMono.variable} dark h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="flex min-h-full flex-col text-white">
+        <SiteHeader />
+        <div className="flex-1">{children}</div>
+      </body>
     </html>
   );
 }

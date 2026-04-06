@@ -43,3 +43,12 @@ npm run deploy:worker
 
 - Worker name and runtime config are set in `wrangler.toml`.
 - Site logo is stored at `public/assemble-all-fnq-logo.png`.
+
+## Environment variables
+
+- **Development (Next.js):** copy `.env.development.example` to `.env.development.local` and adjust URLs.
+- **Production build:** Next loads `.env.production` / `.env.production.local` automatically when you run `next build` or `opennextjs-cloudflare build`. Start from `.env.production.example`.
+- **Staging build:** copy `.env.staging.example` to `.env.staging`, then use `npm run build:worker:staging`, `npm run preview:worker:staging`, or `npm run deploy:worker:staging` (loads that file via `dotenv-cli`).
+- **Wrangler local secrets:** copy `.dev.vars.example` to `.dev.vars` for preview/worker-only keys (not read by plain `next dev`).
+
+Wrangler `[env.staging]` uses Worker name `assemble-all-website-staging` and R2 bucket `assemble-quote-photos-staging` — create that bucket (or rename in `wrangler.toml`) before deploying staging.

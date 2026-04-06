@@ -1,15 +1,7 @@
 import Image from "next/image";
-import {
-  CheckCircle2,
-  Clock3,
-  Phone,
-  Star,
-  Wrench,
-  MapPin,
-} from "lucide-react";
+import { CheckCircle2, Clock3, Star, Wrench, MapPin } from "lucide-react";
 
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
 import {
   Card,
   CardContent,
@@ -22,38 +14,6 @@ import { Separator } from "@/components/ui/separator";
 export default function Home() {
   return (
     <main className="min-h-screen bg-[#05070d] text-white">
-      <div className="border-b border-white/10 bg-black/70 backdrop-blur">
-        <nav className="mx-auto flex h-20 w-full max-w-6xl items-center justify-between px-6 md:px-10">
-          <div className="flex items-center gap-3">
-            <Image
-              src="/assemble-all-fnq-logo.png"
-              alt="Assemble All FNQ logo"
-              width={44}
-              height={44}
-              className="rounded-full border border-blue-400/50"
-            />
-            <p className="text-lg font-semibold tracking-tight md:text-xl">
-              Assemble All FNQ
-            </p>
-          </div>
-          <div className="hidden items-center gap-8 text-sm font-medium text-white/75 md:flex">
-            <a className="transition hover:text-blue-300" href="#">
-              Home
-            </a>
-            <a className="transition hover:text-blue-300" href="#">
-              Our Work
-            </a>
-            <a className="transition hover:text-blue-300" href="#">
-              Reviews
-            </a>
-          </div>
-          <Button className="bg-blue-600 text-white shadow-[0_8px_24px_rgba(37,99,235,0.35)] hover:bg-blue-500">
-            <Phone className="mr-2 size-4" />
-            Call Now
-          </Button>
-        </nav>
-      </div>
-
       <div className="mx-auto grid w-full max-w-6xl gap-8 px-6 py-12 md:grid-cols-2 md:px-10 md:py-20">
         <section className="flex flex-col justify-center">
           <div className="mb-5 flex items-center gap-4">
